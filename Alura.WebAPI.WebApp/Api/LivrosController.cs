@@ -30,13 +30,13 @@ namespace Alura.WebAPI.WebApp.Api
 
         //incluir um livro a partir do seu id 
         [HttpPost]
-        public IActionResult Incluir(LivroUpload model)
+        public IActionResult Incluir([FromBody] LivroUpload model)
         {
             if (ModelState.IsValid)
             {
                 var livro = model.ToLivro();
                 _repo.Incluir(livro);
-                var uri = Url.Action("Recuperar", new { id = livro.Id });
+                var uri = Url.Action("Recuperar", livro.Id);
                 return Created(uri, livro);//create código 201
 
             }
@@ -46,7 +46,7 @@ namespace Alura.WebAPI.WebApp.Api
 
         // fazendo a alteração dos livros que já foram inseridos
         [HttpPost]
-        public IActionResult Alterar(LivroUpload model)
+        public IActionResult Alterar([FromBody]LivroUpload model)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace Alura.WebAPI.WebApp.Api
                 return NotFound();
             }
             _repo.Excluir(model);
-            return NoContent(); //código  203
+            return NoContent(); //código  204
         }
     }
 }

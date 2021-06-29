@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace Alura.WebAPI.WebApp.Api
 {
-    public class LivrosController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class LivrosController : ControllerBase
     {
         private readonly IRepository<Livro> _repo;
 
@@ -17,15 +19,15 @@ namespace Alura.WebAPI.WebApp.Api
             _repo = repository;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Recuperar(int id)
         {
             var model = _repo.Find(id);
-            if (model==null)
+            if (model == null)
             {
                 return NotFound();
             }
-            return Json(model.ToModel());
+            return Ok(model.ToModel());
         }
 
         //incluir um livro a partir do seu id 
@@ -45,8 +47,8 @@ namespace Alura.WebAPI.WebApp.Api
 
 
         // fazendo a alteração dos livros que já foram inseridos
-        [HttpPost]
-        public IActionResult Alterar([FromBody]LivroUpload model)
+        [HttpPut]
+        public IActionResult Alterar([FromBody] LivroUpload model)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +66,7 @@ namespace Alura.WebAPI.WebApp.Api
             return BadRequest();
         }
         //método exclusão
-        [HttpPost]
+        [HttpDelete("{id}")]
         public IActionResult Remover(int id)
         {
             var model = _repo.Find(id);

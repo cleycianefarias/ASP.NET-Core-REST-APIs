@@ -44,8 +44,8 @@ namespace Alura.ListaLeitura.Modelos
                 Autor = livro.Autor,
                 //Capa = $"/api/capas/{livro.Id}",
                 //Lista = livro.Lista.ParaString()
-                ImagemCapa = $"livros/{livro.Id}/capa",
-                Lista = livro.Lista
+                ImagemCapa = $"api/livros/{livro.Id}/capa",
+                Lista = livro.Lista.ParaString()
             };
         }
 

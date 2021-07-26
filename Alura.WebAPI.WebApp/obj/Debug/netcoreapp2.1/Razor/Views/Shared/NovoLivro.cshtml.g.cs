@@ -64,12 +64,12 @@ using Alura.ListaLeitura.WebApp.Models;
             WriteLiteral("<li class=\"list-group-item my-3 mx-5 border-0\">\r\n    ");
             EndContext();
             BeginContext(53, 148, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e843eacf7e374b76b09d7729478de812", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d0ee3507fd745f186bdec02054fb018", async() => {
                 BeginContext(97, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(107, 84, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cf362dec4f934a98b9ffd7f0559c5efd", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8ae2a9d0892d42d6a95549c98a7effe9", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
